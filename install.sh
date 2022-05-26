@@ -20,7 +20,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
    
    sudo curl -L "https://github.com/docker/compose/releases/download/1.27.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
    sudo chmod +rx /usr/local/bin/docker-compose
-   sudo docker pull portainer/portainer
+   sudo docker pull portainer/portainer-ce:latest
    sudo docker volume create portainer_data 
    sudo docker run -d -p 8000:8000 -p 8080:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data --restart  always portainer/portainer
    sudo docker ps
