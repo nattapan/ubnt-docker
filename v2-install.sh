@@ -1,6 +1,9 @@
 echo "need Super User Level before run this script"
+echo "set TimeZone to Bangkok and force NTP client to Thai server"
 sudo timedatectl set-timezone Asia/Bangkok
-
+sudo cp -f timesyncd.conf /etc/systemd/timesyncd.conf
+sudo systemctl restart systemd-timesyncd
+sudo date
 sudo apt update && sudo apt upgrade -y
 sudo apt-get remove docker docker-engine docker.io containerd runc
 sudo apt-get install -y \
