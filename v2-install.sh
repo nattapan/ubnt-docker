@@ -3,7 +3,10 @@ echo "set TimeZone to Bangkok and force NTP client to Thai server"
 sudo timedatectl set-timezone Asia/Bangkok
 sudo cp -f timesyncd.conf /etc/systemd/timesyncd.conf
 sudo systemctl restart systemd-timesyncd
-sudo date
+sudo date 
+echo "set to not ask for restart service after install or upgrade"
+sudo echo '$nrconf{restart} = 'a';' >>   /etc/needrestart/needrestart.conf 
+echo "upgrade and install docker" 
 sudo apt update && sudo apt upgrade -y
 sudo apt-get remove docker docker-engine docker.io containerd runc
 sudo apt-get install -y \
