@@ -7,7 +7,7 @@ sudo date
 echo "set to not ask for restart service after install or upgrade"
 sudo echo '$nrconf{restart} = 'a';' >>   /etc/needrestart/needrestart.conf 
 echo "upgrade and install docker" 
-sudo apt update && sudo apt upgrade -y
+sudo apt update && sudo apt dist-upgrade -y
 sudo apt-get remove docker docker-engine docker.io containerd runc
 sudo apt-get install -y \
     apt-transport-https \
