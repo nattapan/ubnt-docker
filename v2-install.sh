@@ -1,3 +1,8 @@
+#----------------------------------------------------
+echo "send dhcp-client-identifier = hardware;" >>/etc/dhcp/dhclient.conf
+rm /var/lib/dhcp/*
+systemctl restart systemd-networkd
+#----------------------------------------------------
 echo "need Super User Level before run this script"
 echo "set TimeZone to Bangkok and force NTP client to Thai server"
 sudo timedatectl set-timezone Asia/Bangkok
