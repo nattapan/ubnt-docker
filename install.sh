@@ -1,3 +1,8 @@
+#----------------------------------------------------
+echo "send dhcp-client-identifier = hardware;" >>/etc/dhcp/dhclient.conf
+rm /var/lib/dhcp/*
+systemctl restart systemd-networkd
+#----------------------------------------------------
 echo "need Super User Level before run this script"
 sudo apt update && sudo apt dist-upgrade -y
 sudo apt-get remove docker docker-engine docker.io containerd runc
