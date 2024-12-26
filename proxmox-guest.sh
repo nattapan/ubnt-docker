@@ -6,6 +6,9 @@ sudo systemctl restart systemd-timesyncd
 sudo date 
 echo "set to not ask for restart service after install or upgrade"
 sudo echo '$nrconf{restart} = 'a';' >>   /etc/needrestart/needrestart.conf 
+echo "send dhcp-client-identifier = hardware;" >>/etc/dhcp/dhclient.conf
+rm /var/lib/dhcp/*
+systemctl restart networking
 echo "upgrade and install docker" 
 sudo apt update && sudo apt dist-upgrade -y
 sudo apt-get remove docker docker-engine docker.io containerd runc
