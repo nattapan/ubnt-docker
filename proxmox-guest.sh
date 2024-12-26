@@ -1,4 +1,8 @@
 echo "need Super User Level before run this script"
+#----------------------------------------------------
+sudo rm -f /etc/machine-id
+sudo dbus-uuidgen --ensure=/etc/machine-id
+#----------------------------------------------------
 echo "set TimeZone to Bangkok and force NTP client to Thai server"
 sudo timedatectl set-timezone Asia/Bangkok
 sudo cp -f timesyncd.conf /etc/systemd/timesyncd.conf
@@ -6,11 +10,6 @@ sudo systemctl restart systemd-timesyncd
 sudo date 
 echo "set to not ask for restart service after install or upgrade"
 sudo echo '$nrconf{restart} = 'a';' >>   /etc/needrestart/needrestart.conf 
-#----------------------------------------------------
-echo "send dhcp-client-identifier = hardware;" >>/etc/dhcp/dhclient.conf
-rm /var/lib/dhcp/*
-systemctl restart systemd-networkd
-#----------------------------------------------------
 echo "upgrade and install docker" 
 sudo apt update && sudo apt dist-upgrade -y
 sudo apt-get remove docker docker-engine docker.io containerd runc
