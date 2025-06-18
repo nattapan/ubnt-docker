@@ -22,7 +22,7 @@ sudo apt-get install -y \
     mc \
     ncdu \
     nmon \
-    nettools \
+    net-tools \
     inetutils-traceroute \
     nloads
         
