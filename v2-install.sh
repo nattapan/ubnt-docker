@@ -1,3 +1,4 @@
+# This for Ubuntu 24.04 LTS up
 #----------------------------------------------------
 sudo rm -f /etc/machine-id
 sudo dbus-uuidgen --ensure=/etc/machine-id
