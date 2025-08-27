@@ -24,7 +24,8 @@ sudo apt-get install -y \
     nmon \
     net-tools \
     inetutils-traceroute \
-    nload
+    nload \
+    speedtest-cli
         
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
  sudo add-apt-repository \
