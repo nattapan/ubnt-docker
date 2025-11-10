@@ -1,0 +1,2 @@
+# very sunday 12:00 AM
+0 0 * * 0 bash /home/judge/ubnt-docker/get-geoip-dat.sh >/dev/null 2>&1
