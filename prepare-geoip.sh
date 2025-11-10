@@ -1,2 +1,2 @@
 #/bin/bash
-mkdir /var/lib/Geoip
+mkdir /var/lib/GeoIP
