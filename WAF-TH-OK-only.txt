@@ -1,0 +1,13 @@
+# SecGeoLookupDb /path/to/GeoLiteCity.dat
+SecGeoLookupDb /var/lib/Geoip/dbip4.dat
+
+### accept only Thailand IP
+#SecRule REMOTE_ADDR "@geoLookup" "chain,id:22,drop,msg:'Non-GB IP address'"
+#SecRule GEO:COUNTRY_CODE "!@streq GB"
+
+SecRule REMOTE_ADDR "@geoLookup" "chain,id:22,drop,msg:'Non-TH IP address'"
+SecRule GEO:COUNTRY_CODE "!@streq TH"
+
+### Accept more than one country 
+#SecRule REMOTE_ADDR "@geoLookup" "chain,id:22,drop,msg:'Non-GB or IE IP address'"
+#SecRule GEO:COUNTRY_CODE "!@pm GB IE"
