@@ -1,5 +1,5 @@
 # SecGeoLookupDb /path/to/GeoLiteCity.dat
-SecGeoLookupDb /var/lib/Geoip/dbip4.dat
+SecGeoLookupDb /var/lib/GeoIP/dbip4.dat
 
 ### accept only Thailand IP
 SecRule REMOTE_ADDR "@geoLookup" "chain,id:22,drop,msg:'Non-TH IP address'"
