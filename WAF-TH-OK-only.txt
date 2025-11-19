@@ -6,5 +6,5 @@ SecRule REMOTE_ADDR "@geoLookup" "chain,id:22,drop,msg:'Non-TH IP address'"
 SecRule GEO:COUNTRY_CODE "!@streq TH"
 
 ### Accept more than one country 
-#SecRule REMOTE_ADDR "@geoLookup" "chain,id:22,drop,msg:'Non-GB or IE IP address'"
-#SecRule GEO:COUNTRY_CODE "!@pm GB IE"
+#SecRule REMOTE_ADDR "@geoLookup" "chain,id:22,drop,msg:'Non-TH or IE JP address'"
+#SecRule GEO:COUNTRY_CODE "!@pm  TH JP"
